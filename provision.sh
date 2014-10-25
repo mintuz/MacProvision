@@ -14,7 +14,7 @@ function makeDirectories() {
 }
 
 function installHomebrew() {
-  ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
+  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 }
 
 function installBrews() {
@@ -55,14 +55,14 @@ function installNPM() {
 
   for item in "${npmModules[@]}"
   do
-    npm install -g $item
+    sudo npm install -g $item
   done
 
 }
 
 makeDirectories && \
-installRVM && \
 installHomebrew && \
+installRVM && \
 installBrews && \
 installSoftware && \
 installNPM \
